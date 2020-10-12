@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F48B5D964D75D321F086872 /* Pods_SNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047FE320AD6C91169C3F5F7 /* Pods_SNS.framework */; };
+		DE3E7A2A253441E700CD3761 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A29253441E700CD3761 /* Database.swift */; };
+		DE3E7A2C253442AC00CD3761 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A2B253442AC00CD3761 /* AuthManager.swift */; };
+		DE3E7A2E253442FE00CD3761 /* StroageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A2D253442FE00CD3761 /* StroageManger.swift */; };
+		DE7E5F24253445A900748899 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E5F23253445A900748899 /* Extensions.swift */; };
 		DEE9C17E253432170030C0E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C17D253432170030C0E7 /* AppDelegate.swift */; };
 		DEE9C180253432170030C0E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C17F253432170030C0E7 /* SceneDelegate.swift */; };
 		DEE9C182253432170030C0E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C181253432170030C0E7 /* HomeViewController.swift */; };
@@ -26,9 +31,18 @@
 		DEE9C1AF253434300030C0E7 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C1AE253434300030C0E7 /* SearchResultViewController.swift */; };
 		DEE9C1B1253434510030C0E7 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C1B0253434510030C0E7 /* PostEditorViewController.swift */; };
 		DEE9C1B3253434620030C0E7 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C1B2253434620030C0E7 /* PublishPostViewController.swift */; };
+		DEE9C1B525343F120030C0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEE9C1B425343F120030C0E7 /* GoogleService-Info.plist */; };
+		DEEBADA42534405900D8A533 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBADA32534405900D8A533 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6047FE320AD6C91169C3F5F7 /* Pods_SNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98749884D54F7D0764CFEEA1 /* Pods-SNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS.release.xcconfig"; path = "Target Support Files/Pods-SNS/Pods-SNS.release.xcconfig"; sourceTree = "<group>"; };
+		C984D0059433B85623D62957 /* Pods-SNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNS.debug.xcconfig"; path = "Target Support Files/Pods-SNS/Pods-SNS.debug.xcconfig"; sourceTree = "<group>"; };
+		DE3E7A29253441E700CD3761 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Database.swift; path = /Users/terry/Desktop/Dev/WorkSpace/Xcode/SNS/SNS/Resource/Database.swift; sourceTree = "<absolute>"; };
+		DE3E7A2B253442AC00CD3761 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		DE3E7A2D253442FE00CD3761 /* StroageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroageManger.swift; sourceTree = "<group>"; };
+		DE7E5F23253445A900748899 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DEE9C17A253432170030C0E7 /* SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE9C17D253432170030C0E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEE9C17F253432170030C0E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +64,8 @@
 		DEE9C1AE253434300030C0E7 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		DEE9C1B0253434510030C0E7 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		DEE9C1B2253434620030C0E7 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
+		DEE9C1B425343F120030C0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DEEBADA32534405900D8A533 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +73,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F48B5D964D75D321F086872 /* Pods_SNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACF98D4AFAFF871BDAB18281 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6047FE320AD6C91169C3F5F7 /* Pods_SNS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC5AAC05E41690611FD95644 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C984D0059433B85623D62957 /* Pods-SNS.debug.xcconfig */,
+				98749884D54F7D0764CFEEA1 /* Pods-SNS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DEE9C171253432170030C0E7 = {
 			isa = PBXGroup;
 			children = (
 				DEE9C17C253432170030C0E7 /* SNS */,
 				DEE9C17B253432170030C0E7 /* Products */,
+				CC5AAC05E41690611FD95644 /* Pods */,
+				ACF98D4AFAFF871BDAB18281 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +123,7 @@
 				DEE9C192253432250030C0E7 /* Model */,
 				DEE9C1912534321D0030C0E7 /* Controller */,
 				DEE9C18B253432170030C0E7 /* Info.plist */,
+				DEE9C1B425343F120030C0E7 /* GoogleService-Info.plist */,
 			);
 			path = SNS;
 			sourceTree = "<group>";
@@ -119,6 +156,10 @@
 		DEE9C194253432340030C0E7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DE3E7A29253441E700CD3761 /* Database.swift */,
+				DE7E5F23253445A900748899 /* Extensions.swift */,
+				DE3E7A2B253442AC00CD3761 /* AuthManager.swift */,
+				DE3E7A2D253442FE00CD3761 /* StroageManger.swift */,
 				DEE9C17D253432170030C0E7 /* AppDelegate.swift */,
 				DEE9C17F253432170030C0E7 /* SceneDelegate.swift */,
 			);
@@ -150,6 +191,23 @@
 			isa = PBXGroup;
 			children = (
 				DEE9C1A12534338E0030C0E7 /* Onboarding */,
+				DEEBADA52534413A00D8A533 /* General */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		DEE9C1A12534338E0030C0E7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DEE9C1A2253433A50030C0E7 /* RegistrationViewController.swift */,
+				DEEBADA32534405900D8A533 /* LoginViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DEEBADA52534413A00D8A533 /* General */ = {
+			isa = PBXGroup;
+			children = (
 				DEE9C1A4253433D20030C0E7 /* PostViewController.swift */,
 				DEE9C1A6253433F60030C0E7 /* EditProfileViewController.swift */,
 				DEE9C1A8253434000030C0E7 /* SettingViewController.swift */,
@@ -159,15 +217,7 @@
 				DEE9C1B0253434510030C0E7 /* PostEditorViewController.swift */,
 				DEE9C1B2253434620030C0E7 /* PublishPostViewController.swift */,
 			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		DEE9C1A12534338E0030C0E7 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				DEE9C1A2253433A50030C0E7 /* RegistrationViewController.swift */,
-			);
-			path = Onboarding;
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEE9C18E253432170030C0E7 /* Build configuration list for PBXNativeTarget "SNS" */;
 			buildPhases = (
+				407F223DA4A84922999917E3 /* [CP] Check Pods Manifest.lock */,
 				DEE9C176253432170030C0E7 /* Sources */,
 				DEE9C177253432170030C0E7 /* Frameworks */,
 				DEE9C178253432170030C0E7 /* Resources */,
+				8F043BFCD038FC0977F3CAA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,12 +281,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE9C18A253432170030C0E7 /* LaunchScreen.storyboard in Resources */,
+				DEE9C1B525343F120030C0E7 /* GoogleService-Info.plist in Resources */,
 				DEE9C187253432170030C0E7 /* Assets.xcassets in Resources */,
 				DEE9C185253432170030C0E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		407F223DA4A84922999917E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SNS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F043BFCD038FC0977F3CAA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNS/Pods-SNS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNS/Pods-SNS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SNS/Pods-SNS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEE9C176253432170030C0E7 /* Sources */ = {
@@ -247,13 +342,18 @@
 				DEE9C197253432BB0030C0E7 /* ExploreViewController.swift in Sources */,
 				DEE9C19A253432E10030C0E7 /* CameraViewController.swift in Sources */,
 				DEE9C1A3253433A50030C0E7 /* RegistrationViewController.swift in Sources */,
+				DE3E7A2A253441E700CD3761 /* Database.swift in Sources */,
 				DEE9C1B3253434620030C0E7 /* PublishPostViewController.swift in Sources */,
 				DEE9C182253432170030C0E7 /* HomeViewController.swift in Sources */,
+				DE3E7A2E253442FE00CD3761 /* StroageManger.swift in Sources */,
 				DEE9C19C253432FE0030C0E7 /* NotificationsViewController.swift in Sources */,
 				DEE9C1AF253434300030C0E7 /* SearchResultViewController.swift in Sources */,
 				DEE9C1AD2534341C0030C0E7 /* SearchViewController.swift in Sources */,
+				DE7E5F24253445A900748899 /* Extensions.swift in Sources */,
 				DEE9C19E2534330F0030C0E7 /* ProfileViewController.swift in Sources */,
 				DEE9C1B1253434510030C0E7 /* PostEditorViewController.swift in Sources */,
+				DE3E7A2C253442AC00CD3761 /* AuthManager.swift in Sources */,
+				DEEBADA42534405900D8A533 /* LoginViewController.swift in Sources */,
 				DEE9C17E253432170030C0E7 /* AppDelegate.swift in Sources */,
 				DEE9C1A7253433F60030C0E7 /* EditProfileViewController.swift in Sources */,
 				DEE9C180253432170030C0E7 /* SceneDelegate.swift in Sources */,
@@ -398,6 +498,7 @@
 		};
 		DEE9C18F253432170030C0E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C984D0059433B85623D62957 /* Pods-SNS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -416,6 +517,7 @@
 		};
 		DEE9C190253432170030C0E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98749884D54F7D0764CFEEA1 /* Pods-SNS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
