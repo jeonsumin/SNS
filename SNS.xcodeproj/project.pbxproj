@@ -11,6 +11,7 @@
 		DE3E7A2A253441E700CD3761 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A29253441E700CD3761 /* Database.swift */; };
 		DE3E7A2C253442AC00CD3761 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A2B253442AC00CD3761 /* AuthManager.swift */; };
 		DE3E7A2E253442FE00CD3761 /* StroageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A2D253442FE00CD3761 /* StroageManger.swift */; };
+		DE4F87192535F44D00447190 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F87182535F44D00447190 /* Model.swift */; };
 		DE7E5F24253445A900748899 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E5F23253445A900748899 /* Extensions.swift */; };
 		DE804188253584ED004C7381 /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE804187253584ED004C7381 /* IGFeedPostTableViewCell.swift */; };
 		DE80418B253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80418A253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 		DE3E7A29253441E700CD3761 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Database.swift; path = /Users/terry/Desktop/Dev/WorkSpace/Xcode/SNS/SNS/Resource/Database.swift; sourceTree = "<absolute>"; };
 		DE3E7A2B253442AC00CD3761 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		DE3E7A2D253442FE00CD3761 /* StroageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroageManger.swift; sourceTree = "<group>"; };
+		DE4F87182535F44D00447190 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DE7E5F23253445A900748899 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DE804187253584ED004C7381 /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
 		DE80418A253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		DEE9C192253432250030C0E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE4F87182535F44D00447190 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				DE3E7A2E253442FE00CD3761 /* StroageManger.swift in Sources */,
 				DEE9C19C253432FE0030C0E7 /* NotificationsViewController.swift in Sources */,
 				DE804188253584ED004C7381 /* IGFeedPostTableViewCell.swift in Sources */,
+				DE4F87192535F44D00447190 /* Model.swift in Sources */,
 				DE8041942535E83A004C7381 /* PhotoCollectionViewCell.swift in Sources */,
 				DEE9C1AF253434300030C0E7 /* SearchResultViewController.swift in Sources */,
 				DEE9C1AD2534341C0030C0E7 /* SearchViewController.swift in Sources */,
