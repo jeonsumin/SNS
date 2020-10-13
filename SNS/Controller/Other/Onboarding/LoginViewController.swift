@@ -10,7 +10,7 @@ import SafariServices
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     struct Constants {
         static let cornerRadius: CGFloat = 8.0
     }
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     
     //비밀번호 필드
     private let passwordField: UITextField = {
-       let field = UITextField()
+        let field = UITextField()
         field.isSecureTextEntry = true
         field.placeholder = "Password"
         field.returnKeyType = .continue  //키보드 리턴 타입
@@ -57,12 +57,12 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = Constants.cornerRadius
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
-       return button
+        return button
     }()
     
     // 이용 약관 버튼
     private let termsButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("서비스 약관", for: .normal)
         button.setTitleColor(.secondaryLabel, for: .normal)
         return button
@@ -70,21 +70,21 @@ class LoginViewController: UIViewController {
     
     //개인정보 보호 정책
     private let privacyButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("개인정보 보호 정책", for: .normal)
         button.setTitleColor(.secondaryLabel, for: .normal)
         return button
     }()
     
-    //회원가입 버튼
+    
+    //로그인 버튼
     private let createAccountButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Create Account", for: .normal)
+        button.setTitle("Create an Account", for: .normal)
         button.setTitleColor(.label, for: .normal)
         
-       return button
+        return button
     }()
-    
     //topView
     private let headerView: UIView  = {
         let header = UIView()
@@ -94,7 +94,7 @@ class LoginViewController: UIViewController {
         
         // 뷰에 추가
         header.addSubview(backgroundImageView)
-       return header
+        return header
     }()
     
     override func viewDidLoad() {
@@ -194,10 +194,33 @@ class LoginViewController: UIViewController {
         
         guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty,
             let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
-            return
+                return
         }
         
+        var username: String?
+        var email: String?
+        
         //로그인 기능
+        if usernameEmail.contains("@"), usernameEmail.contains("."){
+            email = usernameEmail
+        }else{
+            username = usernameEmail
+        }
+        
+        AuthManager.shared.loginUser(username: username,
+                                     email: email,
+                                     password: password) { success in
+                                        DispatchQueue.main.async {
+                                            
+                                            if success {
+                                                self.dismiss(animated: true, completion: nil)
+                                            }else{
+                                                let alert = UIAlertController(title: "로그인 실패", message: "로그인에 실패하였습니다.", preferredStyle: .alert)
+                                                alert.addAction(UIAlertAction( title: "닫기", style: .cancel, handler: nil))
+                                                self.present(alert, animated: true)
+                                            }
+                                        }
+        }
         
     }
     @objc private func didTapTermsButton(){
@@ -216,7 +239,8 @@ class LoginViewController: UIViewController {
     }
     @objc private func didTapCreateAccountButton(){
         let vc = RegistrationViewController()
-        present(vc,animated: true)
+        vc.title = "Create Account"
+        present(UINavigationController(rootViewController: vc),animated: true)
     }
     
 }
