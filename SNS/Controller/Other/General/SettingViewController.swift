@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 struct SettingCellModel {
     let title: String
     let handler: (() -> Void)
@@ -38,12 +40,75 @@ final class SettingViewController: UIViewController {
     }
     
     private func configureModel(){
-        let section = [
+        data.append([
+            SettingCellModel(title: "프로필 수정") { [weak self] in
+                self?.didTapEditProfile()
+            },
+            SettingCellModel(title: "친구 초대") { [weak self] in
+                self?.didTapInviteFriends()
+            },
+            SettingCellModel(title: "게시물 저장") { [weak self] in
+                self?.didTapSaveOriginalPost()
+            }
+        ])
+        
+        data.append([
+            SettingCellModel(title: "개인정보 보호 정책") { [weak self] in
+                self?.openURL(type:.terms)
+            }
+        ])
+        data.append([
+            SettingCellModel(title: "서비스 약관 ") { [weak self] in
+                self?.openURL(type:.privacy)
+            }
+        ])
+        data.append([
+            SettingCellModel(title: "Help /  FeedBack") { [weak self] in
+                self?.openURL(type:.help)
+            }
+        ])
+        
+        data.append([
             SettingCellModel(title: "Log Out") { [weak self] in
                 self?.didTapLogOut()
             }
-        ]
-        data.append(section)
+        ])
+    }
+    
+    enum SettingURlType {
+        case terms, privacy, help
+    }
+    
+    private func openURL(type: SettingURlType) {
+        let urlString: String
+        switch type {
+        case .terms:
+            urlString = "https://help.instagram.com/581066165581870?ref=dp"
+        case .privacy:
+            urlString = "https://help.instagram.com/519522125107875"
+        case .help:
+            urlString = "https://help.instagram.com/"
+        }
+        
+        guard let url = URL(string: urlString) else{
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc,animated: true)
+    }
+    private func didTapSaveOriginalPost(){
+        
+    }
+    
+    private func didTapInviteFriends(){
+        //친구 초대 공유 시트
+    }
+    
+    private func didTapEditProfile(){
+        let vc = EditProfileViewController()
+        vc.title = "프로필 수정"
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC,animated: true)
     }
     
     private func didTapLogOut(){

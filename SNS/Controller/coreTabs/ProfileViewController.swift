@@ -8,7 +8,7 @@
 
 import UIKit
 
- /// Profile view controller 
+ /// Profile view controller
 final class ProfileViewController: UIViewController {
 
     private var collectionView: UICollectionView?
@@ -17,6 +17,7 @@ final class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        
         configureNavigationBar()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical

@@ -12,6 +12,10 @@
 		DE3E7A2C253442AC00CD3761 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A2B253442AC00CD3761 /* AuthManager.swift */; };
 		DE3E7A2E253442FE00CD3761 /* StroageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7A2D253442FE00CD3761 /* StroageManger.swift */; };
 		DE7E5F24253445A900748899 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E5F23253445A900748899 /* Extensions.swift */; };
+		DE804188253584ED004C7381 /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE804187253584ED004C7381 /* IGFeedPostTableViewCell.swift */; };
+		DE80418B253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80418A253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift */; };
+		DE80418D25358608004C7381 /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80418C25358608004C7381 /* IGFeedPostActionsTableViewCell.swift */; };
+		DE80418F2535862A004C7381 /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80418E2535862A004C7381 /* IGFeedPostGeneralTableViewCell.swift */; };
 		DEE9C17E253432170030C0E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C17D253432170030C0E7 /* AppDelegate.swift */; };
 		DEE9C180253432170030C0E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C17F253432170030C0E7 /* SceneDelegate.swift */; };
 		DEE9C182253432170030C0E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9C181253432170030C0E7 /* HomeViewController.swift */; };
@@ -43,6 +47,10 @@
 		DE3E7A2B253442AC00CD3761 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		DE3E7A2D253442FE00CD3761 /* StroageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroageManger.swift; sourceTree = "<group>"; };
 		DE7E5F23253445A900748899 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DE804187253584ED004C7381 /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		DE80418A253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		DE80418C25358608004C7381 /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		DE80418E2535862A004C7381 /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		DEE9C17A253432170030C0E7 /* SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE9C17D253432170030C0E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEE9C17F253432170030C0E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +105,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DE804186253584CB004C7381 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE804189253585C5004C7381 /* HomeFeed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE804189253585C5004C7381 /* HomeFeed */ = {
+			isa = PBXGroup;
+			children = (
+				DE804187253584ED004C7381 /* IGFeedPostTableViewCell.swift */,
+				DE80418A253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift */,
+				DE80418C25358608004C7381 /* IGFeedPostActionsTableViewCell.swift */,
+				DE80418E2535862A004C7381 /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = HomeFeed;
+			sourceTree = "<group>";
+		};
 		DEE9C171253432170030C0E7 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +174,7 @@
 		DEE9C1932534322D0030C0E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE804186253584CB004C7381 /* Cells */,
 				DEE9C195253432500030C0E7 /* storyboard */,
 				DEE9C186253432170030C0E7 /* Assets.xcassets */,
 			);
@@ -342,19 +370,23 @@
 				DEE9C197253432BB0030C0E7 /* ExploreViewController.swift in Sources */,
 				DEE9C19A253432E10030C0E7 /* CameraViewController.swift in Sources */,
 				DEE9C1A3253433A50030C0E7 /* RegistrationViewController.swift in Sources */,
+				DE80418B253585DC004C7381 /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				DE3E7A2A253441E700CD3761 /* Database.swift in Sources */,
 				DEE9C1B3253434620030C0E7 /* PublishPostViewController.swift in Sources */,
 				DEE9C182253432170030C0E7 /* HomeViewController.swift in Sources */,
 				DE3E7A2E253442FE00CD3761 /* StroageManger.swift in Sources */,
 				DEE9C19C253432FE0030C0E7 /* NotificationsViewController.swift in Sources */,
+				DE804188253584ED004C7381 /* IGFeedPostTableViewCell.swift in Sources */,
 				DEE9C1AF253434300030C0E7 /* SearchResultViewController.swift in Sources */,
 				DEE9C1AD2534341C0030C0E7 /* SearchViewController.swift in Sources */,
 				DE7E5F24253445A900748899 /* Extensions.swift in Sources */,
+				DE80418F2535862A004C7381 /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				DEE9C19E2534330F0030C0E7 /* ProfileViewController.swift in Sources */,
 				DEE9C1B1253434510030C0E7 /* PostEditorViewController.swift in Sources */,
 				DE3E7A2C253442AC00CD3761 /* AuthManager.swift in Sources */,
 				DEEBADA42534405900D8A533 /* LoginViewController.swift in Sources */,
 				DEE9C17E253432170030C0E7 /* AppDelegate.swift in Sources */,
+				DE80418D25358608004C7381 /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				DEE9C1A7253433F60030C0E7 /* EditProfileViewController.swift in Sources */,
 				DEE9C180253432170030C0E7 /* SceneDelegate.swift in Sources */,
 			);
