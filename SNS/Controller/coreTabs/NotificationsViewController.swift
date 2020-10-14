@@ -14,23 +14,58 @@ class NotificationsViewController: UIViewController,UITableViewDelegate, UITable
 
     private let tableView: UITableView = {
        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.isHidden = true
+        table.register(NotificationLikeEventTableViewCell.self, forCellReuseIdentifier: NotificationLikeEventTableViewCell.identifier)
+      table.register(NotificationFollowEventTableViewCell.self, forCellReuseIdentifier: NotificationFollowEventTableViewCell.identifier)
+          
         return table
     }()
     
+    private let spinner: UIActivityIndicatorView = {
+       let spinner = UIActivityIndicatorView()
+        spinner.hidesWhenStopped = true
+        spinner.tintColor = .label
+        return spinner
+    }()
+    
+    private lazy var noNotificationView = NotificationView()
+    
+    
+    //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "알림"
-//        tabBarItem.
+        navigationItem.title = "알림"
         view.backgroundColor = .systemBackground
         tableView.dataSource = self
         tableView.delegate = self
+        
+        view.addSubview(spinner)
+        spinner.startAnimating()
         view.addSubview(tableView)
+        view.addSubview(noNotificationView)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        spinner.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: 100,
+            height: 100)
+        spinner.center = view.center
+    }
+    
+    private func addlayoutNoNotification(){
+        tableView.isHidden = true
+        view.addSubview(tableView)
+        noNotificationView.frame = CGRect(
+                x: 0,
+                y: 0,
+                width: view.width/2,
+                height: view.width/4)
+            noNotificationView.center = view.center
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

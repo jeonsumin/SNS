@@ -134,14 +134,23 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func profileHeaderDidTapFollowerButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc  = ListViewController(data: ["전수민","안우진","인동환"])
+        var mockData = [UserRelationShip]()
+        for x in 0..<10{
+            mockData.append(UserRelationShip(username: "@전수민", name: "전수민", type: x % 2 == 0 ? .following : .not_following))
+        }
+
+        let vc  = ListViewController(data: mockData)
         vc.title = "팔로워"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderDidTapFollowingButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc  = ListViewController(data: ["전수민","안우진","인동환"])
+        var mockData = [UserRelationShip]()
+           for x in 0..<10{
+               mockData.append(UserRelationShip(username: "@전수민", name: "전수민", type: x % 2 == 0 ? .following : .not_following))
+           }
+        let vc  = ListViewController(data: mockData)
         vc.title = "팔로잉"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
