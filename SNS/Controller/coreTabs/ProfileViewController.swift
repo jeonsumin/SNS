@@ -12,6 +12,8 @@ import UIKit
 final class ProfileViewController: UIViewController {
 
     private var collectionView: UICollectionView?
+
+    private var userPosts = [UserPost]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,7 @@ final class ProfileViewController: UIViewController {
                                  height: size)
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
-        collectionView?.backgroundColor = .red
+        
         
         //Cell
         collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
@@ -74,16 +76,26 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if section == 0 {
             return 0
         }
+//        return userPosts.count
         return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let model = userPosts[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+//        cell.configure(with: model)
         cell.configure(debug: "test")
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        //모델을 가져와서 포스트컨트롤러 호출
+        let model = userPosts[indexPath.row]
+        let vc = PostViewController(model: model)
+        vc.title = "게시글"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -92,11 +104,13 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         if indexPath.section == 1 {
             //tabs header
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as! ProfileTabsCollectionReusableView
-            return header
+            let tabControlheader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as! ProfileTabsCollectionReusableView
+            tabControlheader.delegate = self
+            return tabControlheader
 
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileInfoHeaderCollectionReusableView
+        profileHeader.delegate = self
         return profileHeader
     }
     
@@ -107,6 +121,49 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         
         // 섹션 탭의 크기
-        return CGSize(width: collectionView.width, height: 65)
+        return CGSize(width: collectionView.width, height: 50)
     }
+ }
+
+ //MARK:- ProfileinfoHeaderCollectionReusableViewDelegate
+ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate {
+    
+    func profileHeaderDidTapPostButton(_ header: ProfileInfoHeaderCollectionReusableView) {
+        //게시물 섹션으로 스크롤
+        collectionView?.scrollToItem(at: IndexPath(row:0, section: 1), at: .top, animated: true)
+    }
+    
+    func profileHeaderDidTapFollowerButton(_ header: ProfileInfoHeaderCollectionReusableView) {
+        let vc  = ListViewController(data: ["전수민","안우진","인동환"])
+        vc.title = "팔로워"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func profileHeaderDidTapFollowingButton(_ header: ProfileInfoHeaderCollectionReusableView) {
+        let vc  = ListViewController(data: ["전수민","안우진","인동환"])
+        vc.title = "팔로잉"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func profileHeaderDidTapEditProfileButton(_ header: ProfileInfoHeaderCollectionReusableView) {
+        let vc = EditProfileViewController()
+        vc.title = "프로필 편집"
+        present(UINavigationController(rootViewController: vc),animated: true)
+    }
+    
+    
+ }
+ extension ProfileViewController: ProfileTabsCollectionReusableViewDelegate {
+    func didTapGridButtontab() {
+        
+        
+    }
+    
+    func didTapTaggeduttonTab() {
+        
+    }
+    
+    
  }
