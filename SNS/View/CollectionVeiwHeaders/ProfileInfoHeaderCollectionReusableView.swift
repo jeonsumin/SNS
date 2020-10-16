@@ -87,7 +87,7 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     
     private func addButtonActions(){
         followersButton.addTarget(
-            self,
+            self, 
             action: #selector(didTapFollowerButton),
             for: .touchUpInside
         )
