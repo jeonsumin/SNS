@@ -69,6 +69,17 @@ final class NotificationsViewController: UIViewController,UITableViewDelegate, U
     
     private func fetchNotifications(){
         for x in 0...100{
+            let user = User(username: "안우진",
+                            bio: "",
+                            name: "",
+                            profilePhoto: URL(string: "https://google.com")!,
+                            birthDate: Date(),
+                            gender: .male,
+                            counts: UserCount(followers: 1,
+                                              following: 1,
+                                              posts: 1),
+                            joinDate: Date())
+            
             let post = UserPost(identifier: "",
                                 postType: .photo,
                                 thumbnailImage: URL(string: "https://www.google.com")!,
@@ -77,7 +88,8 @@ final class NotificationsViewController: UIViewController,UITableViewDelegate, U
                                 likeCount: [],
                                 commonts: [],
                                 createDate: Date(),
-                                taggeduser: [])
+                                taggeduser: [],
+                                owner: user)
             
             let model = UserNotification(type: x % 2 == 0 ? .like(post: post) : .follow(state: .not_following),
                                          text: "Hellow World",
@@ -135,8 +147,19 @@ final class NotificationsViewController: UIViewController,UITableViewDelegate, U
 }
 extension NotificationsViewController: NotificationLikeEventTableViewCellDelegate {
     func didTapRelatedButton(model: UserNotification) {
-        print("Tapped post")
-        // open the post
+        switch model.type {
+        case .like(let post):
+            // open the post
+            let vc = PostViewController(model: post)
+            vc.title = post.postType.rawValue
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .follow(_):
+            fatalError("개발자 문제는 절대 호출되지 않습니다.")
+        }
+        
+        
     }
 }
 
