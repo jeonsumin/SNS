@@ -116,10 +116,11 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             model = feedRanderModels[0]
             
         }else{
-            let position = x % 4 == 0 ? x/4 : (x - (x%4)/4)
+            let position = x % 4 == 0 ? x / 4 : ((x - ( x % 4)) / 4)
             model = feedRanderModels[position]
         }
         let subSection = x % 4
+        
         if subSection == 0 {
             //header
             return 1
@@ -145,12 +146,13 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let x = indexPath.section
+        
         let model : HomeFeedRnderViewModel
         
         if x == 0 {
             model = feedRanderModels[0]
         }else{
-            let position = x % 4 == 0 ? x/4 : (x - (x%4)/4)
+            let position = x % 4 == 0 ? x/4 : ((x - (x%4))/4)
             model = feedRanderModels[position]
         }
         
@@ -245,17 +247,17 @@ extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate {
     
     
 }
-extension HomeViewController:IGFeedPostActionsTableViewCellDelegate{
+extension HomeViewController: IGFeedPostActionsTableViewCellDelegate{
     func didTapLikeButton() {
         print("like")
     }
     
     func didTapcommentButton() {
-        print("like")
+        print("comment")
     }
     
     func didTapSendButton() {
-        print("like")
+        print("send")
     }
     
     
